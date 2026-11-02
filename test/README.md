@@ -1,47 +1,26 @@
-# Sample testbench for a Tiny Tapeout project
+![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/test/badge.svg) ![](../../workflows/fpga/badge.svg)
 
-This is a sample testbench for a Tiny Tapeout project. It uses [cocotb](https://docs.cocotb.org/en/stable/) to drive the DUT and check the outputs.
-See below to get started or for more information, check the [website](https://tinytapeout.com/hdl/testing/).
+# Tiny Tapeout VGA Glyph Mode
 
-## Setting up
+![example VGA output](docs/screenshot.png)
 
-1. Edit [Makefile](Makefile) and modify `PROJECT_SOURCES` to point to your Verilog files.
-2. Edit [tb.v](tb.v) and replace `tt_um_example` with your module name.
 
-## How to run
+This is an entry into the Tiny Tapeout Demoscene competition.  The name is a
+play on the VGA Text Mode, but this project uses glyphs seen in
+[The Matrix Digital Rain](https://www.youtube.com/watch?v=SneR61OG4ZI) -- a
+brilliant effect from the best science fiction movie since 1999.
 
-To run the RTL simulation:
+The demo is targeting the following categories:
 
-```sh
-make -B
-```
+ - **Best single tile design** (~53% utiliation)
+ - **Best graphics** (closely resembles movie effect)
+ - **Most impressive for the size** (single tile features 48 unique glyphs, four color palettes)
+ - **Most useful design** (connect multiple boards to recreate the Nebuchadnezzar operator monitor array!)
 
-To run gatelevel simulation, first harden your project and copy `../runs/wokwi/results/final/verilog/gl/{your_module_name}.v` to `gate_level_netlist.v`.
+- [Read the documentation for project](docs/info.md)
 
-Then run:
+## What is Tiny Tapeout?
 
-```sh
-make -B GATES=yes
-```
+Tiny Tapeout is an educational project that aims to make it easier and cheaper than ever to get your digital and analog designs manufactured on a real chip.
 
-If you wish to save the waveform in VCD format instead of FST format, edit tb.v to use `$dumpfile("tb.vcd");` and then run:
-
-```sh
-make -B FST=
-```
-
-This will generate `tb.vcd` instead of `tb.fst`.
-
-## How to view the waveform file
-
-Using GTKWave
-
-```sh
-gtkwave tb.fst tb.gtkw
-```
-
-Using Surfer
-
-```sh
-surfer tb.fst
-```
+To learn more and get started, visit https://tinytapeout.com.
